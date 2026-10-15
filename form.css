@@ -1,0 +1,48 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    margin: auto;
+
+}
+input {
+    width: 75%;
+    padding: 7px;
+    margin: 10px;
+    
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+}
+select{
+    width: 75%;
+    padding: 7px;
+    margin: 10px;
+}
+fieldset {
+    width: 75%;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 5px;
+
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+    width: 75%;
+    
+}
+
+input[type="checkbox"]{
+    margin: 0 5px 0 0;
+}

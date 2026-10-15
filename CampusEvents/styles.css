@@ -1,0 +1,229 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f8fafc;
+    color: #1e293b;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+header {
+    background: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #0e0e0f;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+
+}
+
+nav a {
+    font-size: 0.9rem;
+    color: #475569;
+    font-weight: 500;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    transition: 0.2s;
+}
+
+nav a:hover, nav a.active {
+    color: #1d4ed8;
+    background-color: #eff6ff;
+}
+
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 2rem auto;
+}
+
+
+.btn-primary {
+    background-color: #2563eb;
+    color: #ffffff;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-block;
+    transition: 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: #1d4ed8;
+}
+
+.btn-outline {
+    border: 1px solid #2563eb;
+    color: #2563eb;
+    background: transparent;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+}
+
+
+.badge {
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: 12px;
+}
+.badge-tech { background: #dbeafe; color: #1e40af; }
+.badge-cultural { background: #fce7f3; color: #9d174d; }
+.badge-sports { background: #dcfce7; color: #166534; }
+.badge-workshop { background: #fef3c7; color: #92400e; }
+
+
+.card-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.card-grid-4 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.2rem;
+    margin-top: 1rem;
+}
+
+.event-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.event-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+}
+
+.event-card-body {
+    padding: 1rem;
+}
+
+.event-card-body h3 {
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+}
+
+.event-card-body p {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-bottom: 0.5rem;
+}
+
+
+footer {
+    background: #0f172a;
+    color: #94a3b8;
+    padding: 2.5rem 5% 1rem;
+    margin-top: 4rem;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-col h4 {
+    color: #ffffff;
+    margin-bottom: 0.8rem;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 0.4rem;
+    font-size: 0.85rem;
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #1e293b;
+    padding-top: 1rem;
+    font-size: 0.8rem;
+}
+
+.nav-link {
+    margin-right: 15px;
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    padding-bottom: 15px;
+    border-bottom: 3px solid transparent;
+    display: inline-block;
+    transition: border-color 0.2s;
+    
+}
+
+.nav-link:hover {
+    border-bottom: 3px solid #0056b3;
+    color: #0056b3;
+}
+
+.nav-link.active {
+    border-bottom: 3px solid #0056b3;
+    font-weight: bold;
+    color: #0056b3;
+}
+
+
+.event-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    
+    
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+
+.event-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15); 
+}
