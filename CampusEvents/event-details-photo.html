@@ -7,7 +7,10 @@
 </head>
 <body>
     <header>
-        <div class="logo">Campus Events</div>
+        <div class="logo">
+        <img src="images/logo.png" alt="Campus Events Logo">
+        
+    </div>
         <nav>
             <ul>
                 <li><a href="index.html" class="nav-link">Home</a></li>
@@ -24,7 +27,7 @@
         <div id="tech" style="margin: 1rem 0;">
             
         <div style="margin: 1rem 0; display: flex; align-items: center; gap: 1rem;">
-            <h1>Tech Fest 2026</h1>
+            <h1>Photography Contest</h1>
             <span class="badge badge-tech">Cultural</span>
         </div>
         <p style="color: #64748b; margin-bottom: 1.5rem;">A celebration of creativity and artistic expression.</p>
@@ -87,5 +90,24 @@
             © 2026 Campus Events. All rights reserved.
         </div>
     </footer>
+    <script>
+    let currentPage = window.location.pathname.split('/').pop();
+    if (!currentPage || currentPage === "") {
+        currentPage = "index.html";
+    }
+    if(currentPage.startsWith("event-details")){
+        currentPage = "events.html";
+    }
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(function(link) {
+        const linkHref = link.getAttribute('href');
+
+        if (linkHref === currentPage) {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
+        }
+    });
+</script>
 </body>
 </html>

@@ -28,7 +28,10 @@
 </head>
 <body>
     <header>
-        <div class="logo">Campus Events</div>
+        <div class="logo">
+        <img src="images/logo.png" alt="Campus Events Logo">
+        
+    </div>
         <nav>
             <ul>
                 <li><a href="index.html" class="nav-link">Home</a></li>
@@ -62,7 +65,7 @@
                     <td>10:00 AM</td>
                     <td>Auditorium</td>
                     <td>Technical</td>
-                    <td><a href="event-details.html" class="btn-outline">View</a></td>
+                    <td><a href="event-details-tech.html" class="btn-outline">View</a></td>
                 </tr>
                 <tr>
                     <td>Cultural Day</td>
@@ -70,7 +73,7 @@
                     <td>02:00 PM</td>
                     <td>Main Hall</td>
                     <td>Cultural</td>
-                    <td><a href="event-details.html" class="btn-outline">View</a></td>
+                    <td><a href="event-details-cultural.html" class="btn-outline">View</a></td>
                 </tr>
                 <tr>
                     <td>Inter-College Sports Meet</td>
@@ -78,7 +81,31 @@
                     <td>09:00 AM</td>
                     <td>Sports Ground</td>
                     <td>Sports</td>
-                    <td><a href="event-details.html" class="btn-outline">View</a></td>
+                    <td><a href="event-details-sports.html" class="btn-outline">View</a></td>
+                </tr>
+                <tr>
+                    <td>AI Workshop</td>
+                    <td>Nov 5, 2026</td>
+                    <td>10:00 am</td>
+                    <td>Seminar Hall</td>
+                    <td>Workshop</td>
+                    <td><a href="event-details-workshop.html" class="btn-outline">View</a></td>
+                </tr>
+                <tr>
+                    <td>Photography Contest</td>
+                    <td>Nov 12, 2026</td>
+                    <td>10:00 AM</td>
+                    <td>Open Grounds</td>
+                    <td>Cultural Event</td>
+                    <td><a href="event-details-photo.html" class="btn-outline">View</a></td>
+                </tr>
+                <tr>
+                    <td>Career Guidance Talk</td>
+                    <td>ONov 18, 2026</td>
+                    <td>10:00 AM</td>
+                    <td>Auditorium</td>
+                    <td>Technical Event</td>
+                    <td><a href="event-details-career.html" class="btn-outline">View</a></td>
                 </tr>
             </tbody>
         </table>
@@ -116,5 +143,21 @@
             © 2026 Campus Events. All rights reserved.
         </div>
     </footer>
+    <script>
+    let currentPage = window.location.pathname.split('/').pop();
+    if (!currentPage || currentPage === "") {
+        currentPage = "index.html";
+    }
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(function(link) {
+        const linkHref = link.getAttribute('href');
+
+        if (linkHref === currentPage) {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
+        }
+    });
+</script>
 </body>
 </html>

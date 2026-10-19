@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <button id="myButton">Click Me</button>
+        <script>
+            function showMessage() {
+                alert("Hello");
+            }
+            function showMessages(){
+                alert("Hello Welcome to Javascript");
+            }
+            const button = document.getElementById("myButton");
+            button.onclick = showMessage;
+            button.onclick = showMessages;
+        </script>
+    </body>
+</html>

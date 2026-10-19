@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <button id = "myButton">click Me</button>
+        <script>
+            function showMessage(){
+                alert("Hello Students");
+            }
+            function showWelcome() { 
+                alert("Welcome to javascript");
+            }
+            const button = document.getElementById("myButton");
+
+            button.addEventListener("click",showMessage);
+            button.addEventListener("click",showWelcome);
+        </script>
+    </body>
+</html>

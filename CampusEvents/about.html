@@ -9,7 +9,10 @@
 
 <body>
     <header>
-        <div class="logo">Campus Events</div>
+        <div class="logo">
+        <img src="images/logo.png" alt="Campus Events Logo">
+        
+    </div>
         <nav>
             <ul>
                 <li><a href="index.html" class="nav-link">Home</a></li>
@@ -131,6 +134,22 @@
             © 2026 Campus Events. All rights reserved.
         </div>
     </footer>
+    <script>
+    let currentPage = window.location.pathname.split('/').pop();
+    if (!currentPage || currentPage === "") {
+        currentPage = "index.html";
+    }
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(function(link) {
+        const linkHref = link.getAttribute('href');
+
+        if (linkHref === currentPage) {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
+        }
+    });
+</script>
 </body>
 
 </html>

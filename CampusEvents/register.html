@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Campus Events - Register</title>
@@ -11,19 +12,25 @@
             gap: 1rem;
             margin-top: 1.5rem;
         }
+
         .form-group {
             display: flex;
             flex-direction: column;
         }
+
         .form-group.full {
             grid-column: span 2;
         }
+
         label {
             font-size: 0.85rem;
             font-weight: 600;
             margin-bottom: 0.3rem;
         }
-        input, select, textarea {
+
+        input,
+        select,
+        textarea {
             padding: 0.6rem;
             border: 1px solid #cbd5e1;
             border-radius: 6px;
@@ -31,9 +38,12 @@
         }
     </style>
 </head>
+
 <body>
     <header>
-        <div class="logo">Campus Events</div>
+        <div class="logo">
+            <img src="images/logo.png" alt="Campus Events Logo">
+        </div>
         <nav>
             <ul>
                 <li><a href="index.html" class="nav-link">Home</a></li>
@@ -51,20 +61,21 @@
 
         <form class="form-grid">
             <div class="form-group">
-                <label>Full Name <span style="color: #ef4444;">*</span></label>
-                <input type="text" placeholder="Enter your full name" required>
+                <label for="fullName">Full Name <span style="color: #ef4444;">*</span></label>
+                <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
             </div>
             <div class="form-group">
-                <label>Email <span style="color: #ef4444;">*</span></label>
-                <input type="email" placeholder="yourname@example.com" required>
+                <label for="email">Email <span style="color: #ef4444;">*</span></label>
+                <input type="email" id="email" name="email" placeholder="yourname@example.com" required>
             </div>
             <div class="form-group">
-                <label>Phone Number <span style="color: #ef4444;">*</span></label>
-                <input type="tel" placeholder="Enter your phone number" required>
+                <label for="phone">Phone Number <span style="color: #ef4444;">*</span></label>
+                
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" inputmode="numeric" maxlength="10" required>
             </div>
             <div class="form-group">
-                <label>Department <span style="color: #ef4444;">*</span></label>
-                <select required>
+                <label for="department">Department <span style="color: #ef4444;">*</span></label>
+                <select id="department" name="department" required>
                     <option value="">Select department</option>
                     <option value="cs">Computer Science</option>
                     <option value="ec">Electronics</option>
@@ -72,25 +83,28 @@
                 </select>
             </div>
             <div class="form-group">
-                <label>Choose an Event <span style="color: #ef4444;">*</span></label>
-                <select required>
+                <label for="eventSelect">Choose an Event <span style="color: #ef4444;">*</span></label>
+                <select id="eventSelect" name="eventSelect" required>
                     <option value="">Select an event</option>
                     <option value="tf">Tech Fest 2026</option>
                     <option value="cd">Cultural Day</option>
                     <option value="sm">Sports Meet</option>
+                    <option value="ai">AI Workshop</option>
+                    <option value="pc">Photography Contest</option>
+                    <option value="cg">Career Guidance Talk</option>
                 </select>
             </div>
             <div class="form-group">
-                <label>Preferred Date <span style="color: #ef4444;">*</span></label>
-                <input type="date" required>
+                <label for="eventDate">Preferred Date <span style="color: #ef4444;">*</span></label>
+                <input type="date" id="eventDate" name="eventDate" required>
             </div>
             <div class="form-group full">
-                <label>Message (Optional)</label>
-                <textarea rows="4" placeholder="Any additional information."></textarea>
+                <label for="message">Message (Optional)</label>
+                <textarea id="message" name="message" rows="4" placeholder="Any additional information."></textarea>
             </div>
             <div class="form-group full" style="flex-direction: row; gap: 0.5rem; align-items: center;">
                 <input type="checkbox" id="terms" required>
-                <label for="terms" style="margin: 0; font-weight: normal;">I agree to the <a href="#" style="color:#2563eb;">event rules and regulations</a>.</label>
+                <label for="terms" style="margin: 0; font-weight: normal;">I agree to the <a href="#" style="color:#0091ff;">event rules and regulations</a>.</label>
             </div>
             <div class="form-group full">
                 <button type="submit" class="btn-primary" style="width: 100%;">Register</button>
@@ -102,8 +116,7 @@
         <div class="footer-content">
             <div class="footer-col">
                 <div class="logo" style="color:white; margin-bottom:0.5rem;">🎓 Campus Events</div>
-                <p style="font-size: 0.85rem;">Bringing students together through<br>learning, creativity and
-                    collaboration.</p>
+                <p style="font-size: 0.85rem;">Bringing students together through<br>learning, creativity and collaboration.</p>
             </div>
             <div class="footer-col">
                 <h4>Quick Links</h4>
@@ -115,7 +128,7 @@
                     <li><a href="register.html">Register</a></li>
                 </ul>
             </div>
-            
+
             <div>
                 <p style="margin: 0 0 10px 0; font-weight: bold; font-size: 14px; color: #cbd5e1;">Follow Us</p>
                 <div style="display: flex; gap: 12px; align-items: center;">
@@ -130,5 +143,97 @@
             © 2026 Campus Events. All rights reserved.
         </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const registerForm = document.querySelector('form');
+            const dateInput = document.getElementById('eventDate');
+            const nameInput = document.getElementById('fullName');
+            const phoneInput = document.getElementById('phone');
+
+            
+            if (nameInput) {
+                nameInput.addEventListener('input', function () {
+                    this.value = this.value.replace(/[^A-Za-z\s\.]/g, '');
+                });
+            }
+
+        
+            if (phoneInput) {
+                phoneInput.addEventListener('input', function () {
+                    this.value = this.value.replace(/[^0-9]/g, '');
+                    if (this.value.length > 10) {
+                        this.value = this.value.slice(0, 10);
+                    }
+                });
+            }
+
+            
+            if (dateInput) {
+                const today = new Date().toISOString().split('T')[0];
+                dateInput.setAttribute('min', today);
+            }
+
+            
+            if (registerForm) {
+                registerForm.addEventListener('submit', function (event) {
+                    event.preventDefault();
+
+                    const nameValue = nameInput ? nameInput.value.trim() : '';
+                    const phoneValue = phoneInput ? phoneInput.value.trim() : '';
+                    const selectedDate = dateInput ? dateInput.value : '';
+
+                    
+                    const nameRegex = /^[A-Za-z\s\.]{2,}$/;
+                    if (!nameRegex.test(nameValue)) {
+                        alert("Please enter a valid full name containing only letters.");
+                        return;
+                    }
+
+                
+                    const phoneRegex = /^[0-9]{10}$/;
+                    if (!phoneRegex.test(phoneValue)) {
+                        alert("Please enter a valid 10-digit phone number.");
+                        return;
+                    }
+
+                    
+                    const todayStr = new Date().toISOString().split('T')[0];
+                    if (selectedDate && selectedDate < todayStr) {
+                        alert("Please select a valid date (today or a future date).");
+                        return;
+                    }
+
+                
+                    alert("Thank you for registering! Your spot has been registered.");
+                    registerForm.reset();
+
+                    if (dateInput) {
+                        dateInput.setAttribute('min', todayStr);
+                    }
+                });
+            }
+
+            // Active page navigation highlighting
+            let currentPage = window.location.pathname.split('/').pop();
+            if (!currentPage || currentPage === "") {
+                currentPage = "index.html";
+            }
+            if (currentPage.startsWith("event-details") || currentPage.startsWith("events-details")) {
+                currentPage = "events.html";
+            }
+
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(function (link) {
+                const linkHref = link.getAttribute('href');
+                if (linkHref === currentPage) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        });
+    </script>
 </body>
+
 </html>
