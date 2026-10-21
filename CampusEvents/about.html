@@ -10,9 +10,9 @@
 <body>
     <header>
         <div class="logo">
-        <img src="images/logo.png" alt="Campus Events Logo">
-        
-    </div>
+            <img src="images/logo.png" alt="Campus Events Logo">
+
+        </div>
         <nav>
             <ul>
                 <li><a href="index.html" class="nav-link">Home</a></li>
@@ -60,42 +60,33 @@
             </div>
         </section>
 
-        <section style="margin-bottom: 3rem;">
-            <h2 style="margin-top: 40px; color: #1e293b;">Our Event Types</h2>
+        <section class="event-types-section">
+            <h2 class="event-types-title">Our Event Types</h2>
 
-            <div style="display: flex; gap: 15px; margin-top: 15px;">
+            <div class="event-types-grid">
 
-
-                <div
-                    style="background-color: #eff6ff; padding: 20px; border-radius: 8px; width: 25%; text-align: center;">
-                    <img src="images/tech-icon.png" alt="Technical" style="width: 36px; height: 36px;">
-                    <h4 style="margin: 10px 0 5px 0;">Technical</h4>
-                    <p style="font-size: 12px; color: #64748b; margin: 0;">Hackathons, tech talks and innovation events.
-                    </p>
+                <div class="event-type-card card-tech">
+                    <img src="images/tech-icon.png" alt="Technical">
+                    <h4>Technical</h4>
+                    <p>Hackathons, tech talks and innovation events.</p>
                 </div>
 
-
-                <div
-                    style="background-color: #fce7f3; padding: 20px; border-radius: 8px; width: 25%; text-align: center;">
-                    <img src="images/cultural-icon.png" alt="Cultural" style="width: 36px; height: 36px;">
-                    <h4 style="margin: 10px 0 5px 0;">Cultural</h4>
-                    <p style="font-size: 12px; color: #64748b; margin: 0;">Music, dance, art and literary events.</p>
+                <div class="event-type-card card-cultural">
+                    <img src="images/cultural-icon.png" alt="Cultural">
+                    <h4>Cultural</h4>
+                    <p>Music, dance, art and literary events.</p>
                 </div>
 
-
-                <div
-                    style="background-color: #dcfce7; padding: 20px; border-radius: 8px; width: 25%; text-align: center;">
-                    <img src="images/sports-icon.png" alt="Sports" style="width: 36px; height: 36px;">
-                    <h4 style="margin: 10px 0 5px 0;">Sports</h4>
-                    <p style="font-size: 12px; color: #64748b; margin: 0;">Intra and inter-college competitions.</p>
+                <div class="event-type-card card-sports">
+                    <img src="images/sports-icon.png" alt="Sports">
+                    <h4>Sports</h4>
+                    <p>Intra and inter-college competitions.</p>
                 </div>
 
-
-                <div
-                    style="background-color: #fef3c7; padding: 20px; border-radius: 8px; width: 25%; text-align: center;">
-                    <img src="images/workshop-icon.png" alt="Workshops" style="width: 36px; height: 36px;">
-                    <h4 style="margin: 10px 0 5px 0;">Workshops</h4>
-                    <p style="font-size: 12px; color: #64748b; margin: 0;">Skill development and industry sessions.</p>
+                <div class="event-type-card card-workshop">
+                    <img src="images/workshop-icon.png" alt="Workshops">
+                    <h4>Workshops</h4>
+                    <p>Skill development and industry sessions.</p>
                 </div>
 
             </div>
@@ -112,14 +103,14 @@
             <div class="footer-col">
                 <h4>Quick Links</h4>
                 <ul>
-                    <li><a href="index.html" >Home</a></li>
-                    <li><a href="about.html" >About</a></li>
-                    <li><a href="events.html" >Events</a></li>
-                    <li><a href="schedule.html" >Schedule</a></li>
-                    <li><a href="register.html" >Register</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="schedule.html">Schedule</a></li>
+                    <li><a href="register.html">Register</a></li>
                 </ul>
             </div>
-            
+
             <div>
                 <p style="margin: 0 0 10px 0; font-weight: bold; font-size: 14px; color: #cbd5e1;">Follow Us</p>
                 <div style="display: flex; gap: 12px; align-items: center;">
@@ -135,21 +126,21 @@
         </div>
     </footer>
     <script>
-    let currentPage = window.location.pathname.split('/').pop();
-    if (!currentPage || currentPage === "") {
-        currentPage = "index.html";
-    }
-    const navLinks = document.querySelectorAll('.nav-link');
-    navLinks.forEach(function(link) {
-        const linkHref = link.getAttribute('href');
-
-        if (linkHref === currentPage) {
-            link.classList.add('active');
-        } else {
-            link.classList.remove('active');
+        let currentPage = window.location.pathname.split('/').pop();
+        if (!currentPage || currentPage === "") {
+            currentPage = "index.html";
         }
-    });
-</script>
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(function (link) {
+            const linkHref = link.getAttribute('href');
+
+            if (linkHref === currentPage) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
+    </script>
 </body>
 
 </html>

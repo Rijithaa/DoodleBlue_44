@@ -246,3 +246,93 @@ footer {
     transform: translateY(-8px) scale(1.02);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15); 
 }
+
+/* Event Types Section */
+.event-types-section {
+    margin-bottom: 3rem;
+}
+
+.event-types-title {
+    margin-top: 40px;
+    color: #1e293b;
+}
+
+.event-types-grid {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+/* Base Event Card Style */
+.event-type-card {
+    padding: 20px;
+    border-radius: 8px;
+    width: 25%;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), 
+                box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+.event-type-card img {
+    width: 36px;
+    height: 36px;
+    transition: transform 0.3s ease;
+}
+
+.event-type-card h4 {
+    margin: 10px 0 5px 0;
+}
+
+.event-type-card p {
+    font-size: 12px;
+    color: #64748b;
+    margin: 0;
+}
+
+/* Individual Card Theme Colors */
+.card-tech { background-color: #eff6ff; }
+.card-cultural { background-color: #fce7f3; }
+.card-sports { background-color: #dcfce7; }
+.card-workshop { background-color: #fef3c7; }
+
+/* Interactive Hover State */
+.event-type-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 10px 20px rgba(15, 23, 42, 0.08);
+}
+
+.event-type-card:hover img {
+    transform: translateY(-2px) scale(1.1);
+}
+
+/* Footer Quick Links Base Styling */
+.footer-col ul li a {
+    color: #cbd5e1;
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 2px;
+    transition: color 0.3s ease;
+}
+
+/* Animated Underline Effect */
+.footer-col ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #0091ff; /* Matches your brand blue */
+    transition: width 0.3s ease-in-out;
+}
+
+/* Hover State */
+.footer-col ul li a:hover {
+    color: #ffffff;
+}
+
+.footer-col ul li a:hover::after {
+    width: 100%;
+}

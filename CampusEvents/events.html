@@ -31,8 +31,10 @@
                 <p style="color: #64748b; font-size: 0.9rem;">Explore upcoming events and be a part of exciting
                     experiences.</p>
             </div>
-            <input type="text" placeholder="Search events..."
-                style="padding: 0.5rem 1rem; border: 1px solid #cbd5e1; border-radius: 6px; width: 250px;">
+            <div style="margin-bottom: 2rem;">
+                <input type="text" id="eventSearch" placeholder="Search events..."
+                    style="width: 100%; padding: 0.75rem; border: 1px solid #cbd5e1; border-radius: 6px;">
+            </div>
         </div>
 
         <div class="card-grid-3">
@@ -149,44 +151,47 @@
     </footer>
 
     <script>
-        const searchBox = document.querySelector('input[placeholder="Search events...""]');
-        const cards = document.querySelectorAll('.event-card');
+        document.addEventListener('DOMContentLoaded', function () {
 
-        searchBox.addEventListener('Keyup', function () {
-            const searchTest = searchBox.value.toLowerCase();
+            const searchBox = document.querySelector('input[placeholder="Search events..."]');
+            const cards = document.querySelectorAll('.event-card');
 
-            cards.forEach(function (card) {
-                const cardText = card.innerTest.toLowerCase();
+            if (searchBox) {
 
-                if (cardText, include(searchText)) {
-                    card.style.display = 'block';
-                }
-                else {
-                    card.style.display = 'none';
+                searchBox.addEventListener('input', function () {
+                    const searchTest = searchBox.value.toLowerCase().trim();
+
+                    cards.forEach(function (card) {
+
+                        const cardText = card.innerText.toLowerCase();
+
+                        if (cardText.includes(searchTest)) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            }
+
+
+            let currentPage = window.location.pathname.split('/').pop();
+            if (!currentPage || currentPage === "") {
+                currentPage = "index.html";
+            }
+            if (currentPage.startsWith("event-details") || currentPage.startsWith("events-details")) {
+                currentPage = "events.html";
+            }
+
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(function (link) {
+                const linkHref = link.getAttribute('href');
+
+                if (linkHref === currentPage) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
                 }
             });
         });
-
-
-        let currentPage = window.location.pathname.split('/').pop();
-        if (!currentPage || currentPage === "") {
-            currentPage = "index.html";
-        }
-        const navLinks = document.querySelectorAll('.nav-link');
-        navLinks.forEach(function (link) {
-            const linkHref = link.getAttribute('href');
-
-            if (linkHref === currentPage) {
-                link.classList.add('active');
-            } else {
-                link.classList.remove('active');
-            }
-        });
-
-
-
-
     </script>
-</body>
-
-</html>
